@@ -14,5 +14,5 @@ www.reddit.com/r/pystats
 https://www.youtube.com/user/PyDataTV
 
 
-
-
+Article: 'Ten simple rules for biologists learning to
+program': http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005871
