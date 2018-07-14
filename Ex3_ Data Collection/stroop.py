@@ -1,3 +1,7 @@
+"""stroop.py
+A sample psychology stimulus data collection experiment.
+"""
+
 import pyglet
 from pyglet.window import key
 import time
@@ -17,9 +21,10 @@ keyboard = key.KeyStateHandler()
 window.push_handlers(keyboard)
 
 # Open Log File
-with open('myfile.csv', 'w') as f:
+subject = input('Subject Name: ')
+with open('{}_{}.csv'.format(subject, random.randrange(100000)), 'w') as f:
 
-	writer = csv.DictWriter(f, ['Trial', 'WordText', 'WordColor', 'Response', 'ResponseTime'])
+	writer = csv.DictWriter(f, ['Subject', 'Trial', 'WordText', 'WordColor', 'Response', 'ResponseTime'])
 	writer.writeheader()
 
 	# Main Experiment Loop
@@ -58,7 +63,8 @@ with open('myfile.csv', 'w') as f:
 
 			
 		# Log the Trial to File
-		trial = {'Trial': trialnum, 
+		trial = {'Subject': subject,
+				 'Trial': trialnum, 
 				 'WordText': word, 
 				 'WordColor': word_color, 
 				 'Response': response, 
